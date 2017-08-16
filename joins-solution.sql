@@ -37,13 +37,13 @@ GROUP BY customers.id;
 Answer = Lisa had 3, Lucy had 3, Charles had 1, Geroge had 0
 
 -- 6. How many customers do we have?
-SELECT COUNT(first_name)
+SELECT COUNT(*)
 FROM customers;
 
 Answer  = 4
 
 -- 7. How many products do we carry?
-SELECT COUNT(description)
+SELECT COUNT(*)
 FROM products;
 
 Answer = 7
