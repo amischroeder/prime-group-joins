@@ -26,11 +26,13 @@ where description='diet pepsi';
 Answer = alpha, delta, gamma
 
 -- 5. Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
-SELECT * FROM customers
+SELECT customers.id, first_name, last_name, COUNT(*) 
+FROM orders
 JOIN addresses
-on customers.id = addresses.customer_id
-JOIN orders
-on addresses.id = orders.address_id
+ON orders.address_id=addresses.id
+JOIN customers
+ON addresses.customer_id=customers.id
+GROUP BY customers.id;
 
 Answer = Lisa had 3, Lucy had 3, Charles had 1, Geroge had 0
 
